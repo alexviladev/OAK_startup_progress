@@ -1,5 +1,6 @@
 import { useState} from 'react';
 import {PhaseType} from '../types/types';
+import Phase from './Phase';
 
 const PhaseList = () => {
   const [phases, setPhases] = useState<PhaseType[]>([
@@ -23,20 +24,14 @@ const PhaseList = () => {
   ]);
 
   return (
-    <div className="Phase">
+    <div className="PhaseList">
       {phases.length &&
         phases.map((phase) => (
-          <div key={phase.title} >
-            <h1>{phase.title}</h1>
-            <ul>
-              {phase.taskList.map(task => (
-              <div key={task}>
-                <p>{task}</p>
-                <input type='checkbox' />
-              </div>
-              ))}
-            </ul>
-          </div>
+          <Phase 
+            key={phase.title}
+            title={phase.title}
+            taskList={phase.taskList}              
+          />
         ))}
     </div>
   );
