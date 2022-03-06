@@ -21,5 +21,5 @@ Requirements - Frontend:
 - When all phases are completed, display a random fact from
 https://uselessfacts.jsph.pl/random.json .
 
-HOW TO USE
+<h2>HOW TO USE</h2>
 Just fork this repo, clone it in your local and run `npm start`.
