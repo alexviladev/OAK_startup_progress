@@ -24,7 +24,4 @@ https://uselessfacts.jsph.pl/random.json .
 
 
 <h2>HOW TO USE</h2>
-Just fork this repo, clone it in your local and run:
-```
-npm start
-```
+<p>Just fork this repo, clone it in your local and run:</p> `npm start`
