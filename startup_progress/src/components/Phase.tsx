@@ -1,41 +1,35 @@
-import React, {SetStateAction, useState, useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {PhaseProps} from '../types/types';
+import TaskList from './TaskList';
 
-const Phase = ({title, taskList, isCompleted, setPhases, index} :PhaseProps) => {
-  const [tasksCheckState, setTasksCheckState] = useState<boolean[]>(
-    Array(taskList.length).fill(false),
-  );
+const Phase = ({
+  title,
+  taskList,
+  isCompleted,
+  phases,
+  setPhases,
+  index,
+}: PhaseProps) => {
+  const [isPhaseActive, setIsPhaseActive] = useState<boolean>(false);
 
   useEffect(() => {
-    const areAllTasksDone = tasksCheckState.every(bool => bool === true);
-    setPhases((prevState): SetStateAction<any> => {
-      const newState = [...prevState];
-      newState[index].isCompleted = areAllTasksDone;
-      return newState;
-    });
-  }, [tasksCheckState]);
-
-  const handleCheck = (event: React.ChangeEvent<HTMLInputElement>, index: number): void => {
-    const {checked} = event.target;
-    setTasksCheckState((prevState): SetStateAction<any> => {
-      const newState = [...prevState];
-      newState[index] = checked;
-      return newState;
-    })
-  }
+    const isPreviousPhaseCompleted =
+      index > 0 ? phases[index - 1].isCompleted : true;
+    setIsPhaseActive(isPreviousPhaseCompleted ? true : false);
+  }, [phases]);
 
   return (
-    <div className="Phase">
+    <div className={isPhaseActive ? 'Phase' : 'Phase inactive'}>
       <h1>{title}</h1>
-      <p>isCompleted: {''+isCompleted}</p>
-      <p>tasksCheckState: {''+tasksCheckState}</p>
-      {taskList.length &&
-        taskList.map((task, index) => (
-          <div key={task}>
-            <p>{task}</p>
-            <input type='checkbox' onChange={(e) => handleCheck(e, index)} />
-          </div>
-        ))}
+      {taskList.length && (
+        <TaskList
+          taskList={taskList}
+          index={index}
+          setPhases={setPhases}
+          isPhaseActive={isPhaseActive}
+          key={title}
+        />
+      )}
     </div>
   );
 };
