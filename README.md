@@ -8,6 +8,7 @@ Create a simple application that documents this progress.
 
 ![Image example](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F1pmsjnk8f1g01.jpg&f=1&nofb=1 "app example")
 
+
 Requirements:
 - Every phase can have an unlimited amount of tasks.
 - If the startup accomplishes all tasks in the phase, it’s marked as done and
@@ -21,5 +22,9 @@ Requirements - Frontend:
 - When all phases are completed, display a random fact from
 https://uselessfacts.jsph.pl/random.json .
 
+
 <h2>HOW TO USE</h2>
-Just fork this repo, clone it in your local and run `npm start`.
+Just fork this repo, clone it in your local and run:
+```
+npm start
+```
