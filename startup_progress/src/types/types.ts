@@ -1,9 +1,12 @@
 import React from 'react';
 
-export interface PhaseType {
+export interface TaskType {
   title: string;
-  taskList: string[];
   isCompleted: boolean;
+}
+
+export interface PhaseType extends TaskType {
+  taskList: TaskType[];
 }
 
 export interface PhaseProps extends PhaseType {
@@ -13,7 +16,7 @@ export interface PhaseProps extends PhaseType {
 }
 
 export interface TaskListProps {
-  taskList: string[];
+  taskList: TaskType[];
   index: number;
   setPhases: React.Dispatch<React.SetStateAction<PhaseType[]>>;
   isPhaseActive: boolean;

@@ -1,11 +1,13 @@
 import {useEffect, useState} from 'react';
 import {PhaseProps} from '../types/types';
 import TaskList from './TaskList';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faCheck} from '@fortawesome/free-solid-svg-icons';
 
 const Phase = ({
   title,
-  taskList,
   isCompleted,
+  taskList,
   phases,
   setPhases,
   index,
@@ -20,7 +22,10 @@ const Phase = ({
 
   return (
     <div className={isPhaseActive ? 'Phase' : 'Phase inactive'}>
-      <h1>{title}</h1>
+       <div>
+        <h1>{title}</h1>
+        {isCompleted && <FontAwesomeIcon icon={faCheck} />}
+      </div>
       {taskList.length && (
         <TaskList
           taskList={taskList}

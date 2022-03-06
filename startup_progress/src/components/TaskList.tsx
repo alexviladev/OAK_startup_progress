@@ -1,5 +1,5 @@
 import React, {SetStateAction, useEffect, useState} from 'react';
-import {TaskListProps} from '../types/types';
+import {TaskType, TaskListProps} from '../types/types';
 
 const TaskList = ({
   taskList,
@@ -7,27 +7,25 @@ const TaskList = ({
   setPhases,
   isPhaseActive,
 }: TaskListProps) => {
-  const [tasksCheckState, setTasksCheckState] = useState<boolean[]>(
-    Array(taskList.length).fill(false),
-  );
+  const [tasksState, setTasksState] = useState<TaskType[]>(taskList);
 
   useEffect(() => {
-    const allTasksDone = tasksCheckState.every(bool => bool === true);
+    const allTasksDone = tasksState.every(task => task.isCompleted === true);
     setPhases((prevState): SetStateAction<any> => {
       const newState = [...prevState];
       newState[index].isCompleted = allTasksDone;
       return newState;
     });
-  }, [tasksCheckState]);
+  }, [tasksState]);
 
   const handleCheck = (
     e: React.ChangeEvent<HTMLInputElement>,
     ind: number,
   ): void => {
     const {checked} = e.target;
-    setTasksCheckState((prevState): SetStateAction<any> => {
+    setTasksState((prevState): SetStateAction<any> => {
       const newState = [...prevState];
-      newState[ind] = checked;
+      newState[ind].isCompleted = checked;
       return newState;
     });
   };
@@ -36,13 +34,13 @@ const TaskList = ({
     <div className="TaskList">
       {taskList.length &&
         taskList.map((task, ind) => (
-          <div className="Task" key={task}>
+          <div className="Task" key={task.title}>
             <input
               type="checkbox"
               onChange={e => handleCheck(e, ind)}
               disabled={!isPhaseActive}
             />
-            <h2>{task}</h2>
+            <h2>{task.title}</h2>
           </div>
         ))}
     </div>
