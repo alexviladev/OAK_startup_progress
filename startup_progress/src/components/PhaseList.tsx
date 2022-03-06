@@ -12,25 +12,31 @@ const PhaseList = () => {
         'Select business name',
         'Buy domains',
       ],
+      isCompleted: false
     },
     {
       title: 'Discovery',
       taskList: ['Create roadmap', 'Competitor analysis'],
+      isCompleted: false
     },
     {
       title: 'Delivery',
       taskList: ['Release marketing website', 'Release MVP'],
+      isCompleted: false
     },
   ]);
 
   return (
     <div className="PhaseList">
       {phases.length &&
-        phases.map((phase) => (
+        phases.map((phase, index) => (
           <Phase 
             key={phase.title}
             title={phase.title}
-            taskList={phase.taskList}              
+            taskList={phase.taskList}
+            isCompleted={phase.isCompleted}
+            setPhases={setPhases}
+            index={index}          
           />
         ))}
     </div>
