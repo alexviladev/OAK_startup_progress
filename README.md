@@ -6,7 +6,7 @@ Every startup goes through several stages. In every stage, there are necessary s
 to be accomplished.
 Create a simple application that documents this progress.
 
-![Image example](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2F1pmsjnk8f1g01.jpg&f=1&nofb=1 "app example")
+![Image example]( "app example")
 
 
 Requirements:
@@ -24,5 +24,9 @@ https://uselessfacts.jsph.pl/random.json .
 
 
 <h2>HOW TO USE</h2>
-Just fork this repo, clone it in your local and run: `npm start`
+Just fork this repo, clone it in your local and run:
+```
+npm install
+npm start
+```
 
