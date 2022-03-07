@@ -1,0 +1,22 @@
+.Phase {
+  display: flex;
+  width: 30vw;
+  height: 80vh;
+  border: 1rem solid gray;
+}
+
+.inactive {
+  color: gray;
+}
+
+.button {
+  height: 1rem;
+  border-radius: 1rem;
+  background-color: black;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.title {
+  display: inline-flex;
+}

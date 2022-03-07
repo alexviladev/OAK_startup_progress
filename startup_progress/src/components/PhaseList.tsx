@@ -1,9 +1,12 @@
 import {useEffect, useState} from 'react';
 import Phase from './Phase';
+import RandomModal from './RandomModal';
 import {PhaseType} from '../types/types';
 // import './PhaseList.css';
 
 const PhaseList = () => {
+  // state to check if all phases are completed
+  const [allCompleted, setAllCompleted] = useState<boolean>(false);
   // hardcode the phases and tasks in a state, could be easily fetched from API and saved in state in a real case implementation
   const [phases, setPhases] = useState<PhaseType[]>([
     {
@@ -61,10 +64,15 @@ const PhaseList = () => {
   // store progress in local storage
   useEffect(() => {
     window.localStorage.progress = JSON.stringify(phases);
+    if (phases.every(phase => phase.isCompleted === true)) {
+      setAllCompleted(true);
+    }
   }, [phases])
 
   return (
     <div className="Phase">
+      <h1>My Startup Progress</h1>
+      {allCompleted && <RandomModal/>}
       {phases.length &&
         phases.map((phase, index) => (
           <Phase

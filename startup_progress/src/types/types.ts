@@ -21,3 +21,4 @@ export interface TaskListProps {
   setPhases: React.Dispatch<React.SetStateAction<PhaseType[]>>;
   isPhaseActive: boolean;
 }
+

@@ -23,6 +23,7 @@ const Phase = ({
   return (
     <div className={isPhaseActive ? 'Phase' : 'Phase inactive'}>
        <div>
+        <button className='button'>{index +1}</button>
         <h1>{title}</h1>
         {isCompleted && <FontAwesomeIcon icon={faCheck} />}
       </div>
