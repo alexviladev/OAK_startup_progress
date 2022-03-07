@@ -71,8 +71,8 @@ const PhaseList = () => {
 
   return (
     <div className="PhaseList">
-      <h1>My Startup Progress</h1>
       {allCompleted && <RandomModal/>}
+      <h1>My Startup Progress</h1>
       {phases.length &&
         phases.map((phase, index) => (
           <Phase

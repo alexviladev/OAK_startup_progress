@@ -26,7 +26,7 @@ const Phase = ({
       <div className='title'>
         <div className={isPhaseActive ? 'span' : 'spaninactive'}>{index +1}</div>
         <h1>{title}</h1>
-        {isCompleted && <FontAwesomeIcon icon={faCheck} size="6x" />}
+        {isCompleted && <FontAwesomeIcon icon={faCheck} size="3x" />}
       </div>
       {taskList.length && (
         <TaskList
