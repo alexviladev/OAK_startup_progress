@@ -8,11 +8,13 @@ Create a simple application that documents this progress.
 
 
 <h2>Requirements:</h2>
+<ul>
 - Every phase can have an unlimited amount of tasks.
 - If the startup accomplishes all tasks in the phase, it’s marked as done and
 unlocks the next phase.
 - Tasks cannot be marked as completed unless all tasks in the previous phase
 were completed.
+</ul>
 
 <h2>Requirements - Frontend:</h2>
 - Implement in React.
