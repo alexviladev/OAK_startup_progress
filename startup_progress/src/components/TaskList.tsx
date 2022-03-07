@@ -1,5 +1,6 @@
 import React, {SetStateAction, useEffect, useState} from 'react';
 import {TaskType, TaskListProps} from '../types/types';
+import '../styles/TaskList.css';
 
 const TaskList = ({
   taskList,
@@ -36,11 +37,12 @@ const TaskList = ({
         taskList.map((task, ind) => (
           <div className="Task" key={task.title}>
             <input
+              className='checkbox'
               type="checkbox"
               onChange={e => handleCheck(e, ind)}
               disabled={!isPhaseActive}
             />
-            <h2>{task.title}</h2>
+            <p>{task.title}</p>
           </div>
         ))}
     </div>

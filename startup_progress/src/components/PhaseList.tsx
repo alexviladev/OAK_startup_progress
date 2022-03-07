@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import Phase from './Phase';
 import RandomModal from './RandomModal';
 import {PhaseType} from '../types/types';
-// import './PhaseList.css';
+import '../styles/PhaseList.css';
 
 const PhaseList = () => {
   // state to check if all phases are completed
@@ -70,7 +70,7 @@ const PhaseList = () => {
   }, [phases])
 
   return (
-    <div className="Phase">
+    <div className="PhaseList">
       <h1>My Startup Progress</h1>
       {allCompleted && <RandomModal/>}
       {phases.length &&

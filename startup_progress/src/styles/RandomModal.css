@@ -1,0 +1,7 @@
+.modal {
+  position: absolute; 
+  top: 20vh;
+  left: 25vw;
+  border: 5px red ;
+  z-index: 1;
+}

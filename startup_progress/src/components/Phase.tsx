@@ -3,6 +3,7 @@ import {PhaseProps} from '../types/types';
 import TaskList from './TaskList';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCheck} from '@fortawesome/free-solid-svg-icons';
+import '../styles/Phase.css';
 
 const Phase = ({
   title,
@@ -22,10 +23,10 @@ const Phase = ({
 
   return (
     <div className={isPhaseActive ? 'Phase' : 'Phase inactive'}>
-       <div>
-        <button className='button'>{index +1}</button>
+      <div className='title'>
+        <div className={isPhaseActive ? 'span' : 'spaninactive'}>{index +1}</div>
         <h1>{title}</h1>
-        {isCompleted && <FontAwesomeIcon icon={faCheck} />}
+        {isCompleted && <FontAwesomeIcon icon={faCheck} size="6x" />}
       </div>
       {taskList.length && (
         <TaskList

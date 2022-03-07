@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import { RandomFactType } from '../types/types';
+import '../styles/RandomModal.css';
 
 const RandomModal = () => {
   const [randomFact, setRandomFact] = useState<string>('');
@@ -26,7 +26,7 @@ const RandomModal = () => {
   }, [])
 
   return (
-    <div style={{position: 'absolute', top: 200, left: 500, border:'5px red' , zIndex: 1}}>
+    <div className='modal'>
       <h2>All Phases are Complete!</h2>
       <h1>{randomFact}</h1>
     </div>

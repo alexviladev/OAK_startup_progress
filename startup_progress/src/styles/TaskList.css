@@ -1,0 +1,11 @@
+.checkbox {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 0;
+  margin-right: 0.5rem;
+}
+
+.Task {
+  display: flex;
+  align-items: center;
+}
