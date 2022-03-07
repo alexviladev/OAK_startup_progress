@@ -24,7 +24,7 @@ https://uselessfacts.jsph.pl/random.json .
 
 
 <h2>HOW TO USE</h2>
-Just fork this repo, clone it in your local cd into <code>startup_progress<code> and run:
+Just fork this repo, clone it in your local cd into <code>startup_progress</code> and run:
 <pre><code>
 npm install
 npm start
