@@ -22,10 +22,12 @@ const Phase = ({
   }, [phases]);
 
   return (
-    <div className={isPhaseActive ? 'Phase' : 'Phase inactive'}>
-      <div className='title'>
-        <div className={isPhaseActive ? 'span' : 'spaninactive'}>{index +1}</div>
-        <h1>{title}</h1>
+    <div className={isPhaseActive ? 'activetext' : 'inactivetext'}>
+      <div className='titleDiv'>
+        <div className={isPhaseActive ? 'circle' : 'circle inactive'}>
+          <h1>{index +1}</h1>
+        </div>
+        <h1 className='title'>{title}</h1>
         {isCompleted && <FontAwesomeIcon icon={faCheck} size="3x" />}
       </div>
       {taskList.length && (

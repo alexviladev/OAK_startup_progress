@@ -1,10 +1,11 @@
 .modal {
   display: block;
-  position: absolute; 
-  top: 20vh;
-  left: 25vw;
-  border: 2rem solid red;
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+  margin-top: 20vh;
   background-color: gray;
-  width: 35vw;
+  width: 30vw;
   z-index: 1;
+  padding: 1rem;
 }

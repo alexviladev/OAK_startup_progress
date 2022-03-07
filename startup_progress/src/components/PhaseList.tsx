@@ -61,18 +61,20 @@ const PhaseList = () => {
     },
   ]);
 
-  // store progress in local storage
+  // store progress in local storage and keep track of completion state
   useEffect(() => {
     window.localStorage.progress = JSON.stringify(phases);
     if (phases.every(phase => phase.isCompleted === true)) {
       setAllCompleted(true);
+    } else {
+      setAllCompleted(false);
     }
   }, [phases])
 
   return (
     <div className="PhaseList">
-      {allCompleted && <RandomModal/>}
-      <h1>My Startup Progress</h1>
+      {allCompleted ? <RandomModal/> : null}  
+      <h1 className='title'>My Startup Progress</h1>
       {phases.length &&
         phases.map((phase, index) => (
           <Phase
