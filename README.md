@@ -25,8 +25,8 @@ https://uselessfacts.jsph.pl/random.json .
 
 <h2>HOW TO USE</h2>
 Just fork this repo, clone it in your local and run:
-```
+<pre><code>
 npm install
 npm start
-```
+</code></pre>
 
