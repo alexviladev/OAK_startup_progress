@@ -34,9 +34,10 @@ const Phase = ({
         <TaskList
           taskList={taskList}
           index={index}
+          phases={phases}
           setPhases={setPhases}
           isPhaseActive={isPhaseActive}
-          key={title}
+          key={index}
         />
       )}
     </div>

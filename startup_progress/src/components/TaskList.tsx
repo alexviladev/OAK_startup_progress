@@ -15,18 +15,19 @@ const TaskList = ({
     setPhases((prevState): SetStateAction<any> => {
       const newState = [...prevState];
       newState[index].isCompleted = allTasksDone;
+      newState[index].taskList = tasksState;
       return newState;
     });
   }, [tasksState]);
 
   const handleCheck = (
-    e: React.ChangeEvent<HTMLInputElement>,
+    // e: React.ChangeEvent<HTMLInputElement>,
     ind: number,
   ): void => {
-    const {checked} = e.target;
+    // const {checked} = e.target;
     setTasksState((prevState): SetStateAction<any> => {
       const newState = [...prevState];
-      newState[ind].isCompleted = checked;
+      newState[ind].isCompleted = !prevState[ind].isCompleted;
       return newState;
     });
   };
@@ -35,11 +36,12 @@ const TaskList = ({
     <div className="TaskList">
       {taskList.length &&
         taskList.map((task, ind) => (
-          <div className="Task" key={task.title}>
+          <div className="Task" key={ind}>
             <input
               className='checkbox'
               type="checkbox"
-              onChange={e => handleCheck(e, ind)}
+              checked={task.isCompleted}
+              onChange={() => handleCheck(ind)}
               disabled={!isPhaseActive}
             />
             <p>{task.title}</p>

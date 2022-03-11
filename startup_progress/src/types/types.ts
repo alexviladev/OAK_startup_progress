@@ -18,6 +18,7 @@ export interface PhaseProps extends PhaseType {
 export interface TaskListProps {
   taskList: TaskType[];
   index: number;
+  phases: PhaseType[];
   setPhases: React.Dispatch<React.SetStateAction<PhaseType[]>>;
   isPhaseActive: boolean;
 }
